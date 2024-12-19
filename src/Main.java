@@ -2,14 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int my_age = 30;// Java int range -> -2b(billion) to 2b
+        byte var_byte = 23; //-128 to 127
+        short my_monthly_pay = 12345; //-32768 to 32768
+        long num_ants = 98_459_389_345_345L; //-9,223,372,036,854,775,808
+        System.out.print("Hello and welcome!");
     }
 }

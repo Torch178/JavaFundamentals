@@ -11,15 +11,38 @@ public class Main {
         int num_guesses = 0;
         int num;
         String entry;
-        Scanner user_input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to the Number Guessing Game!");
         System.out.println("Correctly guess the random number I've selected between 1 and 100");
-        System.out.println("Number is too low, try again.");
-        System.out.println("Number is too high, try again.");
-        System.out.println("Guess the number (or enter 'quit' to exit): ");
-        System.out.println("Correct! You guessed the right number in " + num_guesses + " attempts!");
+
         do{
+            System.out.println("Guess the number (or enter 'quit' to exit): ");
+            entry = input.next();
+
+            if(entry.equalsIgnoreCase("q") || entry.equalsIgnoreCase("quit") ){
+                System.out.println("You quit, GAME OVER.");
+                System.out.println("Total Guesses: " + num_guesses + "\t Correct Number: " + rand);
+                break;
+            }
+            try{
+                num_guesses++;
+                num = Integer.parseInt(entry);
+                if(num < rand){
+                    System.out.println("Number is too low, try again.");
+                }
+                else if (num > rand){
+                    System.out.println("Number is too high, try again.");
+                }
+                else{
+                    System.out.println("Correct! You guessed the right number in " + num_guesses + " attempt(s)!");
+                    break;
+                }
+            }
+            catch(NumberFormatException e){
+                System.out.println("Enter a valid number or 'q' to quit game. Try Again!");
+            }
+
 
         }while(true);
 
